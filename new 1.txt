@@ -1,0 +1,4 @@
+a = 'Hello'
+name = 'Polina'
+
+print(a ' ' + name)
