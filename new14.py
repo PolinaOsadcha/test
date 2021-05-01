@@ -9,7 +9,7 @@ screen = pygame.display.set_mode(size)
 
 ball = pygame.image.load("intro_ball.gif")
 ballrect = ball.get_rect()
-rab1 = pygame.image.load("intro_ball.gif")
+rab1 = pygame.image.load("rabbit.jpg")
 rab1rect = rab1.get_rect()
 presscount = 0
 rab1_pos = [0,0]
@@ -37,11 +37,12 @@ while 1:
           presscount += 1 
           if presscount == 5:
              presscount = 0
+             rab1rect.update(random.randint(0, width), random.randint(0, height), rab1rect.width, rab1rect.height)
            #  rab1rect = rab1rect.move_ip(100,100)
       if event.type == pygame.QUIT: sys.exit()
 
     ballrect = ballrect.move(speed)
-    rab1rect = rab1rect.move_ip(random.randint(1, 10), random.randint(1, 10))
+    
     if ballrect.left < 0 or ballrect.right > width:
         speed[0] = -speed[0]
     if ballrect.top < 0 or ballrect.bottom > height:
